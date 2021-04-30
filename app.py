@@ -36,21 +36,21 @@ def index():
 
 # @app.route("emission")
 # def emission():
-#     #results = db.session.query(output.countyName, output.2006...)
+#     # results = db.session.query(output.countyName, output.2006...)
 #     # need to add all the jasons 
 #     return jsonify()
 
-# @app.route("/visualizations")
-# def visualizations():
-#     return render_template("visualizations.html")
+@app.route("/visualizations")
+def visualizations():
+    return render_template("visualizations.html")
 
-# @app.route("/discussion")
-# def discussion():
-#     return render_template("discussion.html")
+@app.route("/discussion")
+def discussion():
+    return render_template("discussion.html")
 
-# @app.route("/data")
-# def data():
-#     return render_template("data.html")
+@app.route("/data")
+def data():
+    return render_template("data.html")
 
 if __name__ == "__main__":
     app.run(port=5001, debug=True)
