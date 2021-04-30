@@ -1,7 +1,7 @@
 // Read in csv
-var CO2Data = d3.csv("raw data/CO2_emissions_per_capita.csv")
-var populationData = d3.csv("raw data/population_total_by_country.csv")
-var geoJson = d3.json("raw data/GeoJSON.json")
+var CO2Data = d3.csv("../visualization/raw data/CO2_emissions_per_capita.csv")
+var populationData = d3.csv("../visualization/raw data/population_total_by_country.csv")
+var geoJson = d3.json("../visualization/raw data/GeoJSON.json")
 
 var geodata;
 // This function reads both data above at the same time
@@ -16,7 +16,7 @@ Promise.all([CO2Data, populationData, geoJson]).then(data => {console.log(data) 
   }); 
   
   // Add a tile Layer (the background map image) to our map
-  // var tileLayerUrlTemplate = "https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}"
+  var tileLayerUrlTemplate = "https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}"
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
     {
       attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
@@ -29,9 +29,9 @@ Promise.all([CO2Data, populationData, geoJson]).then(data => {console.log(data) 
 
     // Loop through the stations array
     var countryMarkers = stations.map((station) => {
-    // // For each station, create a marker and bind a popup with the station's name
-    //   markerCoordinates = [station.lat, station.lon]
-    //   var bikeMarker = L.marker(markerCoordinates)
+     // For each station, create a marker and bind a popup with the station's name
+      markerCoordinates = [station.lat, station.lon]
+      var bikeMarker = L.marker(markerCoordinates)
     //                     .bindPopup(`<h3>${station.name}<h3>
     //                                 <hr>
     //                                 <h2>Capacity: ${station.capacity}</h2>`);
