@@ -13,7 +13,7 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.csv("raw data/pytrend_keywords_by_country.csv", function(data) {
+d3.csv("../../raw data/pytrend_keywords_by_country.csv", function(data) {
   // List of groups (here I have one group per column)
   var allGroup = d3.map(data, function(d){return(d.name)}).keys()
 
