@@ -1,7 +1,7 @@
 // EndpointURL = 'http://techslides.com/demos/country-capitals.json'
 
 
-d3.json('./static/js/data/emission_population_location.json', function(response){
+d3.json('./static/js/data/emission_population_location_copy.json', function(response){
     var countries = response.countries;
 
     // //Create panes for each of the sets of markers
