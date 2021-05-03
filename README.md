@@ -32,7 +32,7 @@ We also will be analyzing how searches and trends on Google related to environme
 
 [Pytrends Library] (https://pypi.org/project/pytrends/)
 
-## Shots of our Visualization
+## Sneak Peak of our Visualization
 
 ## Final Analysis
 
