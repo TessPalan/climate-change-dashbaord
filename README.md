@@ -43,7 +43,8 @@ Carolina Ibarra
 > "Quote" 
 
 Ellis Mok
-> "Quote"
+> "For D3 beginners, I suggest to play around with the test example given and then plug in your dataset to the d3 template. 
+> Also check which version you are using - syntax change accordingly."
 
 Grace Li
 > "Quote" 
