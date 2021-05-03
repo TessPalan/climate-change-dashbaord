@@ -1,9 +1,11 @@
 # Let us talk about the health of our Earth 
-### Brought to you by the Perky Penguins: 
+### - Brought to you by the Perky Penguins - 
 Carolina Ibarra, Ellis Mok, Grace Li, Seidy Pacheco, and Tess Palan
+
 ## Background
 Our team aims to develop a dashboard that showcases changes in CO2 emissions by country relative to population changes from 2006-2016. 
 We also will be analyzing how searches and trends on Google related to environmental changes and sustainable goods change as CO2 emissions and population change by regions.
+
 ## Objectives
 1. Visualize how CO2 emission changes are related to population changes
 2. Learn how Google search trends for sustainable goods change alongside these two factors
@@ -16,8 +18,10 @@ We also will be analyzing how searches and trends on Google related to environme
   - Leaflet
   - D3
   - Radial Barchart 
-3. Flask
-4. Front-end Development
+3. Rendering
+  - Flask
+  - SQL Light
+5. Front-end Development
   - HTML
   - CSS
 
@@ -28,4 +32,18 @@ We also will be analyzing how searches and trends on Google related to environme
 
 [Pytrends Library] (https://pypi.org/project/pytrends/)
 
-## 
+## Final Analysis
+
+## Next Steps
+
+## Comments and tips for future readers
+Carolina Ibarra
+> "Quote" 
+Ellis Mok
+> "Quote"
+Grace Li
+> "Quote" 
+Seidy Pacheco
+> "Quote"
+Tess Palan
+> "Quote" 
