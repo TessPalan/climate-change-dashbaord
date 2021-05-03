@@ -15,9 +15,9 @@ We also will be analyzing how searches and trends on Google related to environme
   - Python
    - Pandas
 2. Data Visualizations
-  - Leaflet
-  - D3
+  - Leaflet 
   - Radial Barchart 
+  - D3.json 
 3. Rendering
   - Flask
   - SQL Light
