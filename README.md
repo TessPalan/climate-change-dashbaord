@@ -7,7 +7,25 @@ We also will be analyzing how searches and trends on Google related to environme
 ## Objectives
 1. Visualize how CO2 emission changes are related to population changes
 2. Learn how Google search trends for sustainable goods change alongside these two factors
+
+## Tools and Libraries the Project Uses
+1. Data Pulling and Cleaning
+  - Python
+   - Pandas
+2. Data Visualizations
+  - Leaflet
+  - D3
+  - Radial Barchart 
+3. Flask
+4. Front-end Development
+  - HTML
+  - CSS
+
 ## Sources and Datasets 
 [World Bank Population Totals] (https://data.worldbank.org/indicator/SP.POP.TOTL?view=chart)
+
 [World Bank CO2 Emissions by Country] (https://data.worldbank.org/indicator/EN.ATM.CO2E.PC?view=chart)
+
 [Pytrends Library] (https://pypi.org/project/pytrends/)
+
+## 
