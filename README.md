@@ -39,11 +39,15 @@ We also will be analyzing how searches and trends on Google related to environme
 ## Comments and tips for future readers
 Carolina Ibarra
 > "Quote" 
+
 Ellis Mok
 > "Quote"
+
 Grace Li
 > "Quote" 
+
 Seidy Pacheco
 > "Quote"
+
 Tess Palan
 > "Quote" 
