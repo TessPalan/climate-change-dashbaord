@@ -1,6 +1,6 @@
 html,
 body,
-#map-id {
+#my_dataviz {
   height: 100%; /* orignal files states: { height: 180px } */
   padding: 0;
   margin: 0;
