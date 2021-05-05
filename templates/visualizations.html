@@ -4,11 +4,17 @@
         <meta charset="UTF-8">
         <title>Climate Change Dashbaord</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="static/css/style.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
         <!-- Load d3.js -->
+        <!-- Color Scale -->
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
         <script src="https://d3js.org/d3.v5.js"></script>
-        <script defer type="text/javascript" src="../visualization/PyTrend_d3/pytrends_d3_line_app/js/logic.js"></script>
-    
+        <script defer type="text/javascript" src="{{ url_for('static', filename='js/logic.js') }}"></script>
+        <script defer src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <link rel="stylesheet" href="https://uicdn.toast.com/chart/latest/toastui-chart.min.css" />
+        <script src="https://uicdn.toast.com/chart/latest/toastui-chart.min.js"></script>
+        <script defer src="{{ url_for('static', filename='js/chart.js') }}"></script>
+        
     </head>
 
     <body>
@@ -47,12 +53,11 @@
             <h1 class="display-6">Climate Change Visualizations</h1>
             <p class="lead">Visualizing CO2 emissions as it relates to total population.</p>
             <p>  
-                <!-- Initialize a select button -->
-               <select id="selectButton"></select> 
+              <!--Initialize a select button -->
+              <select id="selectButton"></select> 
               <!-- Create a div where the graph will take place -->
               <div id="my_dataviz"></div>
-              <!-- Color Scale -->
-              <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+              <div id="chart"></div>
             </p>
           </div>
         </div>
@@ -69,10 +74,6 @@
          Color Scale 
         <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>-->
 
-
-      
-        
-      
       
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
       </body>
