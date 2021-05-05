@@ -30,7 +30,7 @@ svg.append("text")
 // var key = 0; --> testing empty dataset
 
 // Read the data
-d3.csv("../../../raw data/keyword_search_volume_US.csv").then(function(data) {
+d3.csv("../../raw_data/keyword_search_volume_US.csv").then(function(data) {
     // console.log(data);
     // key = data --> testing as well 
   var allGroup = Object.keys(data[0]).slice(1) // this function gets rid of an element from a list
@@ -60,7 +60,7 @@ d3.csv("../../../raw data/keyword_search_volume_US.csv").then(function(data) {
     .domain(d3.extent(data, function(d) { return d.date; }))
     .range([ 0, width ]);
     
-    console.log(x);
+    //console.log(x);
     
   svg.append("g")
     .attr("transform", "translate(0," + height + ")")
@@ -136,7 +136,7 @@ d3.csv("../../../raw data/keyword_search_volume_US.csv").then(function(data) {
     .on('mousemove', mousemove)
     .on('mouseout', mouseout);
 
-  // What happens when the mouse move -> show the annotations at the right positions.
+  // Move the mouse and show the annotations at the right positions
   function mouseover() {
     focus.style("opacity", 1)
     focusText.style("opacity",1)
@@ -144,17 +144,23 @@ d3.csv("../../../raw data/keyword_search_volume_US.csv").then(function(data) {
 
   function mousemove() {
     // recover coordinate we need
-    var x0 = x.invert(d3.mouse(this)[0]);
-    var i = bisect(data, x0, 1);
-    selectedData = data[i]
-    focus
-      .attr("cx", x(selectedData.x))
-      .attr("cy", y(selectedData.y))
-    focusText
-      .html("x:" + selectedData.x + "  -  " + "y:" + selectedData.y)
-      .attr("x", x(selectedData.x)+15)
-      .attr("y", y(selectedData.y))
+    var x0 = x.invert(d3.mouse(this)[1]);
+        i = bisectDate(data, x0, 1);
+        selectedData = data[i - 1]
+        d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+        focus.attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")");
+        focus.select("text").text(formatCurrency(d.close));
+  
+        // focus
+        //   .attr("cx", x(selectedData.x))
+        //   .attr("cy", y(selectedData.y))
+        // focusText
+        //   .html("x:" + selectedData.x + "  -  " + "y:" + selectedData.y)
+        //   .attr("x", x(selectedData.x)+15)
+        //   .attr("y", y(selectedData.y))
     }
+
+    //console.log(x0);
 
   function mouseout() {
     focus.style("opacity", 0)
