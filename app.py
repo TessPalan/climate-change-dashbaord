@@ -58,7 +58,11 @@ def discussion():
 def data():
     return render_template("data.html")
 
-#@app.route("/search")
+#@app.route("/keyword_search")
+# def keyword_search():
+#     results = #query collection pymongo
+#     jsonified_resualts = #convert to json
+#     return(jsonified_resualts)
 
 if __name__ == "__main__":
     app.run(port=5001, debug=True)
