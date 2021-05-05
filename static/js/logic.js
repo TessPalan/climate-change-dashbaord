@@ -30,7 +30,7 @@ svg.append("text")
 // var key = 0; --> testing empty dataset
 
 // Read the data
-d3.csv("../../raw data/keyword_search_volume_US.csv").then(function(data) {
+d3.json("/keyword_search").then(function(data) {
     // console.log(data);
     // key = data --> testing as well 
   var allGroup = Object.keys(data[0]).slice(1) // this function gets rid of an element from a list
@@ -91,7 +91,7 @@ d3.csv("../../raw data/keyword_search_volume_US.csv").then(function(data) {
     .text("Volume of Keywords Searched");  
 
   // This allows to find the closest X index of the mouse:
-  var bisect = d3.bisector(function(d) { return d.x; }).left;
+  var bisect = d3.bisector(function(d) { return d.date; }).left;
 
   // Create the circle that travels along the curve of chart
   var focus = svg
@@ -136,30 +136,37 @@ d3.csv("../../raw data/keyword_search_volume_US.csv").then(function(data) {
     .on('mousemove', mousemove)
     .on('mouseout', mouseout);
 
+  
+var selectedOption = d3.select("#selectButton").property("value")
+
   // What happens when the mouse move -> show the annotations at the right positions.
   function mouseover() {
     focus.style("opacity", 1)
     focusText.style("opacity",1)
-  }
+  };
 
   function mousemove() {
     // recover coordinate we need
     var x0 = x.invert(d3.mouse(this)[0]);
-    var i = bisect(data, x0, 1);
+    var i = bisect(data, x0);
+    // console.log(i)
     selectedData = data[i]
+    console.log(selectedData)
+    console.log(y(selectedData[selectedOption]))
+    console.log((selectedData[selectedOption]))
     focus
-      .attr("cx", x(selectedData.x))
-      .attr("cy", y(selectedData.y))
+      .attr("cx", x(selectedData.date))
+      // .attr("cy", y(selectedData[selectedOption]))
     focusText
-      .html("x:" + selectedData.x + "  -  " + "y:" + selectedData.y)
-      .attr("x", x(selectedData.x)+15)
-      .attr("y", y(selectedData.y))
-    }
+      // .html("x:" + selectedData.x + "  -  " + "y:" + selectedData.y)
+      .attr("x", x(selectedData.date)+15)
+      // .attr("y", y(selectedData.y))
+    };
 
   function mouseout() {
     focus.style("opacity", 0)
     focusText.style("opacity", 0)
-  }
+  };
 
   // svg.selectAll(".dot")
   //   .data(dataset)
@@ -196,12 +203,11 @@ d3.csv("../../raw data/keyword_search_volume_US.csv").then(function(data) {
           )
           .attr("stroke", function(d){ return myColor(selectedOption) })
     }
-    
 
     // When the button is changed, run the updateChart function
     d3.select("#selectButton").on("change", function(d) {
         // recover the option that has been chosen
-        var selectedOption = d3.select(this).property("value")
+        selectedOption = d3.select(this).property("value")
         // run the updateChart function with this selected option
         update(selectedOption)
     })
