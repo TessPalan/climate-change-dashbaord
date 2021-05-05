@@ -37,7 +37,7 @@ We also will be analyzing how searches and trends on Google related to environme
 ### Emissions by Income Level
 ![image](https://user-images.githubusercontent.com/75353991/117095612-a6daa000-ad1b-11eb-8dec-dfdef4b9176a.png)
 
-
+The average total C02 emmissions by income level from 2006-2016. 
 ## Final Analysis
 
 ## Next Steps
