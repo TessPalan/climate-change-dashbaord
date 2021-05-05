@@ -34,7 +34,7 @@ We also will be analyzing how searches and trends on Google related to environme
 [Pytrends Library] (https://pypi.org/project/pytrends/)
 
 ## Sneak Peak of our Visualization
-![Emissions by Income Level]
+# Emissions by Income Level
 ![image](https://user-images.githubusercontent.com/75353991/117095612-a6daa000-ad1b-11eb-8dec-dfdef4b9176a.png)
 
 
