@@ -46,8 +46,8 @@ def index():
 @app.route("/visualizations")
 def visualizations():
     # get the count of total data points
-    count = list(keywords.find())
-    print(count)
+    # count = list(keywords.find())
+    # print(count)
     return render_template("visualizations.html")
 
 @app.route("/discussion")

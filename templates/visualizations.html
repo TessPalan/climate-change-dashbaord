@@ -5,7 +5,10 @@
         <title>Climate Change Dashbaord</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="static/css/style.css">
-        
+        <!-- Load d3.js -->
+        <script src="https://d3js.org/d3.v5.js"></script>
+        <script defer type="text/javascript" src="../visualization/PyTrend_d3/pytrends_d3_line_app/js/logic.js"></script>
+    
     </head>
 
     <body>
@@ -44,14 +47,16 @@
             <h1 class="display-6">Climate Change Visualizations</h1>
             <p class="lead">Visualizing CO2 emissions as it relates to total population.</p>
             <p>  
-
+                <!-- Initialize a select button -->
+               <select id="selectButton"></select> 
+              <!-- Create a div where the graph will take place -->
+              <div id="my_dataviz"></div>
+              <!-- Color Scale -->
+              <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
             </p>
           </div>
         </div>
-
-        <div id="world-map">
-            
-        </div>
+    
 
         <!-- Load d3.js
         <script src="https://d3js.org/d3.v4.js"></script>
