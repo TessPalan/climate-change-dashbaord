@@ -4,8 +4,8 @@ var margin = { top: 30, right: 132, bottom: 30, left: 50 },
         height = 500 - margin.top - margin.bottom;
 
 // var parseDate = d3.time.format("%Y").parse,
-    bisectDate = d3.bisector(function(d) { return d.date; }).left,
-    formatValue = d3.format(",.2f");
+//     bisectDate = d3.bisector(function(d) { return d.date; }).left,
+//     formatValue = d3.format(",.2f");
     
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -50,77 +50,98 @@ d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_data
       .range([ height, 0 ]);
     svg.append("g")
       .call(d3.axisLeft(y));
-
+    
     // Initialize line with first group of the list
-    var line = svg
-      .append('g')
-      .append("path")
-        .datum(data.filter(function(d){return d.name==allGroup[0]}))
-        .attr("d", d3.line()
-          .x(function(d) { return x(d.year) })
-          .y(function(d) { return y(+d.n) })
-        )
-        .attr("stroke", function(d){ return myColor("valueA") })
-        .style("stroke-width", 4)
-        .style("fill", "none")
-  
-    var svg = d3.select("body").append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-  
-        var focus = svg.append("g")
-        .attr("class", "focus")
-        .style("display", "none");
+    line = svg
+    .append('g')
+    .append("path")
+      .datum(data.filter(function(d){return d.name==allGroup[0]}))
+      .attr("d", d3.line()
+        .x(function(d) { return x(d.year) })
+        .y(function(d) { return y(+d.n) })
+      )
+      .attr("stroke", function(d){ return myColor("valueA") })
+      .style("stroke-width", 4)
+      .style("fill", "none")
+      
+    // This allows to find the closest X index of the mouse:
+    bisect = d3.bisector(function(d) { return d.x; }).left;
     
-      focus.append("circle")
-        .attr("r", 4.5);
-    
-      focus.append("text")
-        .attr("x", 9)
-        .attr("dy", ".35em");
-        svg.append("rect")
-        .attr("class", "overlay")
-        .attr("width", width)
-        .attr("height", height)
-        .on("mouseover", function() { focus.style("display", null); })
-        .on("mouseout", function() { focus.style("display", "none"); })
-        .on("mousemove", mousemove);
+    // Create the circle that travels along the curve of chart
+    var focus = svg
+    .append('g')
+    .append('circle')
+      .style("fill", "none")
+      .attr("stroke", "black")
+      .attr('r', 8.5)
+      .style("opacity", 0)
+
+    // Create the text that travels along the curve of chart
+    var focusText = svg
+    .append('g')
+    .append('text')
+      .style("opacity", 0)
+      .attr("text-anchor", "left")
+      .attr("alignment-baseline", "middle")
+  
+    // Create a rect on top of the svg area: this rectangle recovers mouse position
+    svg
+    .append('rect')
+    .style("fill", "none")
+    .style("pointer-events", "all")
+    .attr('width', width)
+    .attr('height', height)
+    .on('mouseover', mouseover)
+    .on('mousemove', mousemove)
+    .on('mouseout', mouseout);
+
+    // What happens when the mouse move -> show the annotations at the right positions.
+    function mouseover() {
+      focus.style("opacity", 1)
+      focusText.style("opacity",1)
+    }
 
     function mousemove() {
-      var x0 = x.invert(d3.mouse(this)[0]),
-          i = bisectDate(data, x0, 1),
-          d0 = data[i - 1],
-          d1 = data[i],
-          d = x0 - d0.year > d1.year - x0 ? d1 : d0;
-      focus.attr("transform", "translate(" + x(d.year) + "," + y(+d.name) + ")");
+      // recover coordinate we need
+      var x0 = x.invert(d3.mouse(this)[0]);
+      var i = bisectDate(data, x0, 1);
+      selectedData = data[i]
+      focus
+        .attr("cx", x(selectedData.x))
+        .attr("cy", y(selectedData.y))
+      focusText
+        .html("x:" + selectedData.x + "  -  " + "y:" + selectedData.y)
+        .attr("x", x(selectedData.x)+15)
+        .attr("y", y(selectedData.y))
       }
+    function mouseout() {
+      focus.style("opacity", 0)
+      focusText.style("opacity", 0)
+    }
 
-    // // A function that update the chart
-    // function update(selectedGroup) {
+  
+    function update(selectedGroup) {
+      // Create new data with the selection?
+      var dataFilter = data.filter(function(d){return d.name==selectedGroup})
 
-    //   // Create new data with the selection?
-    //   var dataFilter = data.filter(function(d){return d.name==selectedGroup})
+      // Give these new data to update line
+      line
+          .datum(dataFilter)
+          .transition()
+          .duration(1000)
+          .attr("d", d3.line()
+            .x(function(d) { return x(d.year) })
+            .y(function(d) { return y(+d.n) })
+          )
+          .attr("stroke", function(d){ return myColor(selectedGroup) })
+    }
 
-    //   // Give these new data to update line
-    //   line
-    //       .datum(dataFilter)
-    //       .transition()
-    //       .duration(1000)
-    //       .attr("d", d3.line()
-    //         .x(function(d) { return x(d.year) })
-    //         .y(function(d) { return y(+d.n) })
-    //       )
-    //       .attr("stroke", function(d){ return myColor(selectedGroup) })
-    // }
-
-    // // When the button is changed, run the updateChart function
-    // d3.select("#selectButton").on("change", function(d) {
-    //     // recover the option that has been chosen
-    //     var selectedOption = d3.select(this).property("value")
-    //     // run the updateChart function with this selected option
-    //     update(selectedOption)
-    // })
+    // When the button is changed, run the updateChart function
+    d3.select("#selectButton").on("change", function(d) {
+        // recover the option that has been chosen
+        var selectedOption = d3.select(this).property("value")
+        // run the updateChart function with this selected option
+        update(selectedOption)
+    })
 
 })
