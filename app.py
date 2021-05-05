@@ -1,11 +1,15 @@
 from flask import Flask, jsonify, render_template, request, redirect
-import sqlite3
-import numpy as np
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
-import csv
+# import sqlite3
+# import numpy as np
+# import sqlalchemy
+# from sqlalchemy.ext.automap import automap_base
+# from sqlalchemy.orm import Session
+# from sqlalchemy import create_engine, func
+# import csv
+import pymongo
+from flask_pymongo import PyMongo
+import pandas as pd
+import json
 
 #################################################
 # Flask Setup
@@ -16,15 +20,14 @@ app = Flask(__name__)
 #################################################
 # Database Setup
 #################################################
-# engine = create_engine("sqlite:///db.sqlite")
+# setup mongo connection
+conn = "mongodb://localhost:27017"
+client = pymongo.MongoClient(conn)
 
-# Base = automap_base()
-# Base.prepare(engine, reflect=True)
-
-## needs to be Base.classes."table name"
-# co2 = Base.classes.CO2_emissions_per_capita
-# population = Base.classes.population_total_by_country
-# pytrend = Base.classes.keyword_search_volume_US
+# connect to mongo db and collection
+db = client.climate_change_db
+keywords = db.keywords
+co2_income = db.co2_income
 
 #################################################
 # Flask Routes
@@ -42,6 +45,9 @@ def index():
 
 @app.route("/visualizations")
 def visualizations():
+    # get the count of total data points
+    count = list(keywords.find())
+    print(count)
     return render_template("visualizations.html")
 
 @app.route("/discussion")
