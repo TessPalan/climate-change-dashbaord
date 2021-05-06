@@ -4,7 +4,7 @@
 //     height = 500 - margin.top - margin.bottom,
 //     tooltip = { width: 100, height: 100, x: 10, y: -30 };
 
-// smaller version! 
+// View the chart as a smaller version
 var margin = {top: 50, right: 30, bottom: 70, left: 100},
     width = 460 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
@@ -18,7 +18,7 @@ var svg = d3.select("#my_dataviz")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
           
-// Append the svg object to the body of the page
+// Append text to the top of the page - the title
 svg.append("text")
   .attr("x", (width / 2))             
   .attr("y", 0 - (margin.top / 2))
@@ -27,14 +27,14 @@ svg.append("text")
   .style("text-decoration", "underline")  
   .text("Pytrend Keywords Search Volume (2004 to 2016)");
 
-// var key = 0; --> testing empty dataset
+// var key = 0; --> test by creating an empty dataset
 
-// Read the data
+// Read in the data
 d3.csv("../../raw_data/keyword_search_volume_US.csv").then(function(data) {
     // console.log(data);
-    // key = data --> testing as well 
-  var allGroup = Object.keys(data[0]).slice(1) // this function gets rid of an element from a list
-    // Convert the year to only the year
+    // key = data --> test by using the keyword data
+  var allGroup = Object.keys(data[0]).slice(1) // function .slice gets rid of an element from a list
+  // Convert the year format to only the year
   var timeConv = data.map(data => {var year = d3.timeParse("%Y")(data.date);
     data["date"] = year;
     return data})
@@ -51,6 +51,7 @@ d3.csv("../../raw_data/keyword_search_volume_US.csv").then(function(data) {
   var myColor = d3.scaleOrdinal()
     .domain(allGroup)
     .range(d3.schemeSet2);
+  
   // Add X axis --> it is a date format
   var x = d3.scaleTime()
     .domain(d3.extent(data, function(d) { return d.date; }))
@@ -59,14 +60,15 @@ d3.csv("../../raw_data/keyword_search_volume_US.csv").then(function(data) {
   svg.append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(x).ticks(7).tickSizeOuter(0));
-  // text label for the x axis
+  // Add text label for the x axis
   svg.append("text")             
     .attr("transform",
           "translate(" + (width/2) + " ," + 
           (height + margin.top + 20) + ")")
     .style("text-anchor", "middle")
     .text("Years");
-  // Add Y axis --> keywords search volume
+  
+    // Add Y axis --> keywords search volume
   var y = d3.scaleLinear()
     .domain([0, d3.max(data, function(d) { return +d["Sustainability"]; })])
     .range([ height, 0 ]);
@@ -80,6 +82,7 @@ d3.csv("../../raw_data/keyword_search_volume_US.csv").then(function(data) {
     .attr("dy", "1em")
     .style("text-anchor", "middle")
     .text("Volume of Keywords Searched");  
+
   // This allows to find the closest X index of the mouse:
   var bisect = d3.bisector(function(d) { return d.date; }).left;
   
@@ -123,8 +126,9 @@ d3.csv("../../raw_data/keyword_search_volume_US.csv").then(function(data) {
       .style("stroke-width", 4)
       .style("fill", "none")
   
+  // Create a variable selectedOption to mark the y axis
+  var selectedOption = d3.select("#selectButton").property("value")
 
-var selectedOption = d3.select("#selectButton").property("value")
   // What happens when the mouse move -> show the annotations at the right positions.
   function mouseover() {
     focus.style("opacity", 10)
@@ -144,40 +148,37 @@ var selectedOption = d3.select("#selectButton").property("value")
       .attr("cx", x(selectedData.date))
       .attr("cy", y(selectedData[selectedOption]))
     focusText
-      .html(selectedData[selectedOption] + "searches") // "x:" + selectedData.date + "  -  " + 
+      .html(selectedData[selectedOption] + " searches") // "x:" + selectedData.date + "  -  " + 
       .attr("x", x(selectedData.date)+15)
       .attr("y", y(selectedData[selectedOption]))
-    };
+  };
   function mouseout() { 
     focus.style("opacity", 10)
     focusText.style("opacity", 10)
   };
   
-    // A function that update the chart
-    function update(selectedOption) {
-      // Create new data with the selection?
-      // var dataFilter = data.filter(function(d){return d["Clean Energy"]==selectedGroup})
-      // y = d3.scaleLinear()
-      y.domain([0, d3.max(data, function(d) { return +d[selectedOption]; })])
-      // .range([ height, 0 ]);
-      yaxis//.append("g")
-      .call(d3.axisLeft(y));
-      // Give these new data to update line
-      line
-          .datum(data)
-          .transition()
-          .duration(1000)
-          .attr("d", d3.line()
-            .x(function(d) { return x(d.date) })
-            .y(function(d) { return y(+d[selectedOption])})
-          )
-          .attr("stroke", function(d){ return myColor(selectedOption) })
-    }
-    // When the button is changed, run the updateChart function
-    d3.select("#selectButton").on("change", function(d) {
-        // recover the option that has been chosen
-        selectedOption = d3.select(this).property("value")
-        // run the updateChart function with this selected option
-        update(selectedOption)
-    })
+  // A function that update the chart
+  function update(selectedOption) {
+    y.domain([0, d3.max(data, function(d) { return +d[selectedOption]; })])
+    yaxis.call(d3.axisLeft(y));
+
+    // Give these new data to update line
+    line
+        .datum(data)
+        .transition()
+        .duration(1000)
+        .attr("d", d3.line()
+          .x(function(d) { return x(d.date) })
+          .y(function(d) { return y(+d[selectedOption])})
+        )
+        .attr("stroke", function(d){ return myColor(selectedOption) })
+  }
+
+  // When the button is changed, run the updateChart function
+  d3.select("#selectButton").on("change", function(d) {
+      // recover the option that has been chosen
+      selectedOption = d3.select(this).property("value")
+      // run the updateChart function with this selectedOption
+      update(selectedOption)
+  })
 })
