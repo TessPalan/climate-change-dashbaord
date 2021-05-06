@@ -1,5 +1,8 @@
 html,
-body,
+body {
+  font: 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        position: relative;
+}; 
 #my_dataviz {
   height: 100%; /* orignal files states: { height: 180px } */
   padding: 0;
@@ -18,7 +21,7 @@ body,
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.legend .low {
+/* .legend .low {
   color: #ec8a2e;
 }
 
@@ -36,11 +39,11 @@ body,
 
 .legend .out-of-order {
   color: #007dff;
-}
+} */
 
-body {
+/* body {
   font: 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+} */
 
 .axis path,
 .axis line {
