@@ -59,11 +59,11 @@ def keyword_search():
     
     return jsonify(results['data'])
 
-@app.route("/jeojsaon_map")
-def jeojsaon_map():
-    results = db.jeojson.find_one({}) #query collection pymongo
+# @app.route("/jeojsaon_map")
+# def jeojsaon_map():
+#     results = db.jeojson.find_one({}) #query collection pymongo
     
-    return jsonify(results['data'])
+#     return jsonify(results['data'])
 
 #@app.route("/geojason")
 # def keyword_search():
