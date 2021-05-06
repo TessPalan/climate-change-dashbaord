@@ -24,7 +24,7 @@ function chooseColorIncome(income) {
 };
 
 // setting path to geojson file 
-var geojsonPath = "data/data2.json";
+var geojsonPath = d3.json('/jeojsaon_map');
 
 // reading in json data and passing into function
 d3.json(geojsonPath, function(geojsonData){
