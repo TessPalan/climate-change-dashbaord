@@ -11,7 +11,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #101804;">
           <div class="container-fluid">
-              <a class="navbar-brand" href="index.html"><strong><em>Climate Change Analysis</em></strong></a>
+              <a class="navbar-brand" href="/"><strong><em>Climate Change Dashboard</em></strong></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -21,12 +21,7 @@
                   <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="visualizations"> Visualization</a>
-                  <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">World CO2 Emissions</a></li>
-                    <li><a class="dropdown-item" href="#">Population vs. Emissions</a></li>
-                    <li><a class="dropdown-item" href="#">Environment Google Trends</a></li>
-                  </ul> -->
+                  <a class="nav-link active" href="visualizations"> Visualizations</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" href="data">Data</a>
@@ -38,29 +33,62 @@
         <br>
         <div class="container">
           <div class="jumbotron">
-            <h1 class="display-6">Climate Change Visualizations</h1>
-            <p class="lead">Visualizing CO2 emissions as it relates to total population.</p>
-            <p>  
-                Our team aims to develop a dashboard that showcases changes in CO2 emissions by country relative to population changes from 2006-2016. We also will be analyzing how searches and trends on Google related to environmental changes and sustainable goods change as CO2 emissions and population change by regions.
-
-            </p>
+            <h1 >🌎 Let us talk about the health of our Earth 🌎</h1>
+            <p></p>
+            <p><i>Brought to you by the Perky Penguins:</i></p>
+            <p><i>Carolina Ibarra, Ellis Mok, Grace Li, Seidy Pacheco, and Tess Palan</i></p>
+            <p></p>
+            <h4>Background</h4>
+            <hr>
+            <p> Have you seen the Google Earth's new Timelapse feature?</p>
+            <iframe class="center" width="560" height="315" src="https://www.youtube.com/embed/5W-zPqrGQWA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p></p>
+            <p></p>
+            <p>Inspired by the Timeplase features and the Earth Day celebration, our team wanted to develop a dashboard that showcases changes in CO2 emissions by country relative to population changes from 2006-2016. We also thought it would be a cool idea to see if there were popular trends in environment-related keywords searches during 2006-2016.</p>
+            <h4>Objectives</h4>
+            <hr>
+            <ol>
+              <li>Visualize how CO2 emission changes are related to population changes</li>
+              <li>Visualize environment-related Google search trends using Pytrends
+              </li>
+            </ol>
+            <h4>Tools and Libraries Used</h4>
+            <hr>
+            <ol>
+              <li>Data Cleaning</li>
+              <ul>
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Pytrends</li>
+              </ul>
+              <li>Data Visualizations
+                <ul>
+                <li>Leaflet</li>
+                <li>Radial Barchart
+                </li>
+                <li>D3</li>
+              </ul>
+            </li>
+              <li>Data Rendering
+              </li>
+                <ul>
+                  <li>Flask</li>
+                  <li>MongoDB</li>
+                  <li>SQL Lite</li>
+                </ul>
+              <li>Front-End Development
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                </ul>
+                
+              </li>
+              <li>Deployment</li>
+                <ul><li>Heroku</li></ul>
+            </ol>
           </div>
-        </div>
 
-        <div id="world-map">
-            
-        </div>
-
-        <!-- Load d3.js
-        <script src="https://d3js.org/d3.v4.js"></script>
-         Initialize a select button
-        <div class="row">
-            <div class = "" 
-            <select id="selectButton"></select>
-            <div id="pytrends_chart"></div>
-        </div>
-         Color Scale 
-        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>-->
+          <a type="button" class="center btn btn-secondary btn-lg btn-block" href="visualizations">View our visualizations</a>
 
 
       

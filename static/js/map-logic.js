@@ -23,48 +23,51 @@ function chooseColorIncome(income) {
     return color
 };
 
-// setting path to geojson file 
-// var geojsonPath = d3.json('/jeojsaon_map');
 
 // reading in json data and passing into function
-d3.json('/geojson_map', function(geojsonData){
+d3.json("/geojson_map").then(function(geojsonData){
 
-    var geoData = geojsonData.features;
-    // console.log(geoData);
 
     // creating base layer when map opens
-    var baseLayerInput = L.geoJSON(geojsonData, {
-        style: (feature) => ({color: "white",
-                            fillColor: "white",
-                            fillOpacity: 0.2,
-                            weight: 1.5}),
-        
-        onEachFeature: (feature, layer) => {
-            layer.on({
-                mouseover: (event) => {layer = event.target;
-                                        layer.setStyle({fillOpacity: 0.9})},
-                mouseout: (event) => {layer = event.target;
-                                        layer.setStyle({fillOpacity: 0.5})},
-                click: (event) => {myMap.fitBounds(event.target.getBounds())}
-            })
-        .bindPopup(`<h2>${feature.properties.admin}</h1> 
-        <hr> 
-        <h3>Income Level: ${feature.properties.income_grp}</h2>
-        <h3>Population: ${feature.properties.pop_est}</h2>
-        <h3>CO2 Emissions Per Capita: ${feature.properties.CO2_Emissions} metric tons`)
+    var baseLayerInput = geojsonData.map(baseFeature => {
+    
+        return L.geoJSON(baseFeature["features"], {
+            style: function(feature) {
+                                 return {color: "white",
+                                fillColor: "white",
+                                fillOpacity: 0.5,
+                                weight: 1.5}},
+            
+            onEachFeature: function(feature, layer) {
+                layer.on({
+                    mouseover: (event) => {layer = event.target;
+                                            layer.setStyle({fillOpacity: 0.9})},
+                    mouseout: (event) => {layer = event.target;
+                                            layer.setStyle({fillOpacity: 0.5})},
+                    click: (event) => {myMap.fitBounds(event.target.getBounds())}
+                })
+            .bindPopup(`<h2>${feature.properties.admin}</h1> 
+            <hr> 
+            <h3>Income Level: ${feature.properties.income_grp}</h2>
+            <h3>Population: ${feature.properties.pop_est}</h2>
+            <h3>CO2 Emissions Per Capita: ${feature.properties.CO2_Emissions} metric tons`)
         }
+    })
     });
 
-    var baseLayer = L.layerGroup([baseLayerInput]);
 
+    var baseLayer = L.layerGroup(baseLayerInput);
+
+    var incomeOutput = geojsonData.map(geoFeature => {
     
-    var incomeOutput = L.geoJSON(geojsonData, {
-                        style: (feature) => ({color: "white",
+                    return L.geoJSON(geoFeature["features"], {
+                        style: function(feature) {
+                                             return {color: "white",
                                             fillColor: chooseColorIncome(feature.properties.income_grp),
                                             fillOpacity: 0.5,
-                                            weight: 1.5}),
+                                            weight: 1.5}},
                         
-                        onEachFeature: (feature, layer) => {
+                        onEachFeature: function(feature, layer) {
                             layer.on({
                                 mouseover: (event) => {layer = event.target;
                                                         layer.setStyle({fillOpacity: 0.9})},
@@ -77,14 +80,17 @@ d3.json('/geojson_map', function(geojsonData){
                         <h3>Income Level: ${feature.properties.income_grp}</h2>
                         <h3>Population: ${feature.properties.pop_est}</h2>
                         <h3>CO2 Emissions Per Capita: ${feature.properties.CO2_Emissions} metric tons`)
-                        }
-    });
+                    }
+            })
+        });
 
-    var incomeLayer = L.layerGroup([incomeOutput]);
+    var incomeLayer = L.layerGroup(incomeOutput);
 
     // var countries = geojsonData.features;
-    var countriesEmission = geoData.map((countryData) => {
-        var country = countryData.properties
+    var countriesEmission = geojsonData.map((countryData) => {
+        // console.log(countryData);
+        var country = countryData.features.properties;
+        // console.log(country);
         
         // Loop through the capitals array
         if (country.cap_lat !== undefined) {
@@ -144,8 +150,8 @@ d3.json('/geojson_map', function(geojsonData){
     // setting mymap attributes
     var myMap = L.map("map", {
         center: [20, 0],
-        zoom: 3,
-        layers: [lightMap, baseLayer]
+        zoom: 2,
+        layers: [darkMap, baseLayer]
     });
 
     L.control.layers(baseMaps, overlayMaps, {

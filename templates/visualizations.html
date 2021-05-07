@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Climate Change Dashbaord</title>
+        <title>Climate Change Dashboard</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
         <!-- Load d3.js -->
@@ -10,19 +10,30 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
 
         <!-- Leaflet CSS -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
-        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin=""/>
+
 
         <!-- Color Scale -->
         <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
         <script src="https://d3js.org/d3.v5.js"></script>
-        <script defer type="text/javascript" src="{{ url_for('static', filename='js/logic.js') }}"></script>
+
+        <!-- Toast UI - New JS Library -->
         <script defer src="https://cdn.plot.ly/plotly-latest.min.js"></script>
         <link rel="stylesheet" href="https://uicdn.toast.com/chart/latest/toastui-chart.min.css" />
         <script src="https://uicdn.toast.com/chart/latest/toastui-chart.min.js"></script>
+        
+        <!-- Radial Chart Logic -->
         <script defer src="{{ url_for('static', filename='js/chart.js') }}"></script>
+       
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
 
+        <!-- Time trend logic -->
+        <script defer type="text/javascript" src="{{ url_for('static', filename='js/logic.js') }}"></script>
         <!-- API key -->
         <script type="text/javascript" src="{{ url_for('static', filename='js/config.js') }}"></script>
         <!-- Our JS -->
@@ -34,7 +45,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #101804;">
           <div class="container-fluid">
-              <a class="navbar-brand" href="index.html"><strong><em>Climate Change Visualizations</em></strong></a>
+              <a class="navbar-brand" href="index.html"><strong><em>Climate Change Dashboard</em></strong></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -45,11 +56,7 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" href="visualizations">Visualizations</a>
-                  <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">World CO2 Emissions</a></li>
-                    <li><a class="dropdown-item" href="#">Population vs. Emissions</a></li>
-                    <li><a class="dropdown-item" href="#">Environment Google Trends</a></li>
-                  </ul> -->
+
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" href="data">Data</a>
@@ -61,18 +68,28 @@
         <br>
         <div class="container">
           <div class="jumbotron">
-            <h1 class="display-6">Climate Change Visualizations</h1>
-            <p class="lead">Visualizing CO2 emissions as it relates to total population.</p>
+            <h1 class="display-6">Visualizations</h1>
+            <hr>
+            <p class="lead">Visualizing per capita and total CO2 emissions (metric tons) as it relates to different demographic factors.</p>
+            <p><i>Click into the layers on the right hand corner to view emissions related to a country's income level or emissions related to overall population.</i></p>
             
             <!-- Adding map to row container centered -->
-            <div class="row">
-                <div class="d-flex justify-content-center" id="map"></div>
-            </div>
+            <div id="map"> </div>
             <p>
+            <hr>
             <!-- round chart average total co2 by income level-->
-              <div class="d-flex justify-content-center" id="chart"></div>
+            <p class="lead">Visualizing total per capita CO2 emissions based on income designations.</p>
+            <p><i>Click into each year selection to view how CO2 emissions have changed between 2006-2016.
+              Select the three dots on the right hand corner to download the image or the source data.
+            </i></p>
+            
+              <div class="center" id="chart"></div>
             </p>
             <!-- keyword line chart - ptrebd key words search -->
+            <hr>
+            <p class="lead">Visualizing Google search trends related to climate change and the environment from 2004 through 2016.</p>
+            <p><i>Select the drop-down list below to view the trend for each search term.
+            </i></p>
             <p> 
               <!--Initialize a select button -->
                 <select id="selectButton"></select> 
