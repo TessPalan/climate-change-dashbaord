@@ -74,6 +74,7 @@ Inspired by the Timeplase features and the Earth Day celebration, our team wante
 Some description of how to view the map, what we see, and what to infer. 
 The bubble changes according to the size of the population and the circle outliner 
 ```
+
 ### Emissions by Income Level
 <details>
 <summary>Click here to view our radial map</summary>
@@ -81,6 +82,11 @@ The bubble changes according to the size of the population and the circle outlin
  ![image](https://user-images.githubusercontent.com/75353991/117095612-a6daa000-ad1b-11eb-8dec-dfdef4b9176a.png)
  
 </details>
+
+```
+Some description of how to view the map, what we see, and what to infer. 
+The bubble changes according to the size of the population and the circle outliner 
+```
 
 ### C02 Emissions as it Realtes to Total Population 
 <details>
