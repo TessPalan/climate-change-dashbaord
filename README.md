@@ -1,22 +1,21 @@
-# :globe_with_meridians: Let us talk about the health of our Earth :globe_with_meridians:
+# :earth_americas: Let us talk about the health of our Earth :earth_americas:
 
-### - Brought to you by the Perky Penguins - 
+#### :pencil2:  Brought to you by the Perky Penguins 
 Carolina Ibarra, Ellis Mok, Grace Li, Seidy Pacheco, and Tess Palan
 
-## Background
+## :books: Background
 Have you seen the Google Earth's new Timelapse feature?
 
 [Click here to see Google Earth Timelapse Climate Change](https://www.ecowatch.com/google-earth-timelapse-climate-change-2652595487.html)
 
 Inspired by the Timeplase features and the Earth Day celebration, our team wanted to develop a dashboard that showcases changes in CO2 emissions by country relative to population changes from 2006-2016. We also thought it would be a cool idea to see if there were popular trends in environment-related keywords searches during 2006-2016. 
 
-## Objectives
+## :white_check_mark: Objectives
 1. Visualize how CO2 emission changes are related to population changes
 2. Visualize environment-related Google search trends using Pytrends
 
-## Tools and Libraries the Project Uses
+## :package: Tools and Libraries the Project Uses
 1. Data Cleaning
-  - Pandas
   - Python
 2. Data Visualizations
   - Leaflet 
@@ -33,14 +32,20 @@ Inspired by the Timeplase features and the Earth Day celebration, our team wante
 6. Heroku
 
 
-## Sources and Datasets 
+## :open_file_folder: Sources and Datasets 
 [World Bank Population Totals] (https://data.worldbank.org/indicator/SP.POP.TOTL?view=chart)
 
 [World Bank CO2 Emissions by Country] (https://data.worldbank.org/indicator/EN.ATM.CO2E.PC?view=chart)
 
 [Pytrends Library] (https://pypi.org/project/pytrends/)
 
-## Sneak Peak of our Visualization
+## :chart_with_upwards_trend: Sneak Peak of our Visualization
+### C02 Emissions as it Realtes to Total Population 
+![image]()
+
+The bubble changes according to the size of the population and the circle outliner 
+
+
 ### Emissions by Income Level
 ![image](https://user-images.githubusercontent.com/75353991/117095612-a6daa000-ad1b-11eb-8dec-dfdef4b9176a.png)
 
@@ -52,11 +57,15 @@ The average total C02 emmissions by income level from 2006-2016.
 Pytrend Keywords Search Volume from 2004 to 2016.
 
 Keywords: Clean Energy, Sustainability, Environment, Climate Change 
-## Final Analysis
 
-## Next Steps
 
-## Comments and tips for future readers
+## :gift: Final Analysis and Limiations
+In general, 2006 -> 2016 increase a little 
+
+## :feet: Next Steps
+To our fellow readers, 
+
+## :star_struck: Comments and tips for future readers
 Carolina Ibarra
 > "It is recommended that you use an empty HTML element when starting a chart." 
 
