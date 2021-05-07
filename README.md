@@ -67,7 +67,7 @@ Inspired by the Timeplase features and the Earth Day celebration, our team wante
 ### C02 Emissions as it Realtes to Total Population 
 <details>
 <summary>Click here to view our heatmap</summary>
- ![image](https://user-images.githubusercontent.com/75353991/117095612-a6daa000-ad1b-11eb-8dec-dfdef4b9176a.png)
+ ![image](![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif))
 </details>
 
 ```
