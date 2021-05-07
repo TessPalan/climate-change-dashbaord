@@ -1,5 +1,6 @@
 # Let us talk about the health of our Earth 
 
+
 ### - Brought to you by the Perky Penguins - 
 Carolina Ibarra, Ellis Mok, Grace Li, Seidy Pacheco, and Tess Palan
 
@@ -34,16 +35,17 @@ We also will be analyzing how searches and trends on Google related to environme
 [Pytrends Library] (https://pypi.org/project/pytrends/)
 
 ## Sneak Peak of our Visualization
+### Emissions by Income Level
+![image](https://user-images.githubusercontent.com/75353991/117095612-a6daa000-ad1b-11eb-8dec-dfdef4b9176a.png)
+
+The average total C02 emmissions by income level from 2006-2016. 
+
 ### C02 Emissions as it Realtes to Total Population 
 ![image](https://user-images.githubusercontent.com/75353991/117392111-40ce5400-aea6-11eb-8e04-49c7830ce430.png)
 
 Pytrend Keywords Search Volume from 2004 to 2016.
 
 Keywords: Clean Energy, Sustainability, Environment, Climate Change 
-### Emissions by Income Level
-![image](https://user-images.githubusercontent.com/75353991/117095612-a6daa000-ad1b-11eb-8dec-dfdef4b9176a.png)
-
-The average total C02 emmissions by income level from 2006-2016. 
 ## Final Analysis
 
 ## Next Steps
