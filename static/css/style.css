@@ -17,8 +17,70 @@ body {
 #map{
     height: 100%;
     padding-top: 150;
-    /* margin-left: 150;
-    margin-right: 150;
-    margin-bottom: 150; */
-  
   }
+
+#my_dataviz {
+    height: 100%;  /* orignal files states: { height: 180px } */
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+#chart {
+  height: 100%;  /* orignal files states: { height: 180px } */
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+  
+.legend {
+    padding: 10px;
+    font-family: Sanchez, serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #555;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: steelblue;
+} 
+
+.focus text {
+  font-size: 14px;
+}
+
+.tooltip {
+  fill: white;
+  stroke: #000;
+}
+
+.tooltip-date, .tooltip-likes {
+  font-weight: bold;
+} 

@@ -5,9 +5,9 @@
 //     tooltip = { width: 100, height: 100, x: 10, y: -30 };
 
 // View the chart as a smaller version
-var margin = {top: 50, right: 30, bottom: 70, left: 100},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+var margin = {top: 50, right: 100, bottom: 70, left: 100},
+    width = 1000 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
 
 // Append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -33,7 +33,7 @@ svg.append("text")
 d3.json("/keyword_search").then(function(data) {
     // console.log(data);
     // key = data --> test by using the keyword data
-  var allGroup = Object.keys(data[0]).slice(1) // function .slice gets rid of an element from a list
+  var allGroup = Object.keys(data[0]).slice(0,4) // function .slice gets rid of an element from a list
   // Convert the year format to only the year
   var timeConv = data.map(data => {var year = d3.timeParse("%Y")(data.date);
     data["date"] = year;
@@ -70,7 +70,7 @@ d3.json("/keyword_search").then(function(data) {
   
     // Add Y axis --> keywords search volume
   var y = d3.scaleLinear()
-    .domain([0, d3.max(data, function(d) { return +d["Sustainability"]; })])
+    .domain([0, d3.max(data, function(d) { return +d["Clean Energy"]; })])
     .range([ height, 0 ]);
   var yaxis = svg.append("g")
     .call(d3.axisLeft(y));
@@ -119,7 +119,7 @@ d3.json("/keyword_search").then(function(data) {
       .datum(data)
       .attr("d", d3.line()
         .x(function(d) { return x(d.date) })
-        .y(function(d) { return y(+d["Sustainability"]) })
+        .y(function(d) { return y(+d["Clean Energy"]) })
       )
       .attr("stroke", function(d){ return myColor("valueB") })
       // .curve(d3.curveMonotoneX) --> area filled in
@@ -181,5 +181,4 @@ d3.json("/keyword_search").then(function(data) {
       // run the updateChart function with this selectedOption
       update(selectedOption)
   })
-})
-
+});

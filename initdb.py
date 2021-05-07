@@ -26,12 +26,12 @@ jeojson_df = pd.read_json("data/data2.json")
 jeojson_dict = jeojson_df.to_dict("records")
 jeojson.insert_one({"data": jeojson_dict})
 
-# connect to mongo db and collection
-emmision_country = db['emmision_country']
+# # connect to mongo db and collection
+# emmision_country = db['emmision_country']
 
-emmision_country_df = pd.read_csv("data/total_emission_by_country.csv")
-emmision_country_dict = emmision_country_df.to_dict("records")
-emmision_country.insert_one({"data": emmision_country_dict})
+# emmision_country_df = pd.read_csv("data/total_emission_by_country.csv")
+# emmision_country_dict = emmision_country_df.to_dict("records")
+# emmision_country.insert_one({"data": emmision_country_dict})
 
 
 

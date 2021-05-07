@@ -24,10 +24,10 @@ function chooseColorIncome(income) {
 };
 
 // setting path to geojson file 
-var geojsonPath = d3.json('/jeojsaon_map');
+// var geojsonPath = d3.json('/jeojsaon_map');
 
 // reading in json data and passing into function
-d3.json(geojsonPath, function(geojsonData){
+d3.json('/jeojsaon_map').then(function(geojsonData){
 
     var geoData = geojsonData.features;
     // console.log(geoData);
