@@ -38,6 +38,7 @@ We also will be analyzing how searches and trends on Google related to environme
 ![image](https://user-images.githubusercontent.com/75353991/117392111-40ce5400-aea6-11eb-8e04-49c7830ce430.png)
 
 Pytrend Keywords Search Volume from 2004 to 2016.
+
 Keywords: Clean Energy, Sustainability, Environment, Climate Change 
 ### Emissions by Income Level
 ![image](https://user-images.githubusercontent.com/75353991/117095612-a6daa000-ad1b-11eb-8dec-dfdef4b9176a.png)
