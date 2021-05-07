@@ -3,7 +3,11 @@
 //     width = 960 - margin.left - margin.right,
 //     height = 500 - margin.top - margin.bottom,
 //     tooltip = { width: 100, height: 100, x: 10, y: -30 };
+<<<<<<< HEAD
 ​
+=======
+
+>>>>>>> e613402148dee5a12a8f716e3238cd1526b0de0e
 // View the chart as a smaller version
 var margin = {top: 50, right: 30, bottom: 70, left: 100},
     width = 460 - margin.left - margin.right,
@@ -26,11 +30,19 @@ svg.append("text")
   .style("font-size", "16px") 
   .style("text-decoration", "underline")  
   .text("Pytrend Keywords Search Volume (2004 to 2016)");
+<<<<<<< HEAD
 ​
 // var key = 0; --> test by creating an empty dataset
 ​
 // Read in the data
 d3.csv("../../raw_data/keyword_search_volume_US.csv").then(function(data) {
+=======
+
+// var key = 0; --> test by creating an empty dataset
+
+// Read in the data
+d3.json("/keyword_search").then(function(data) {
+>>>>>>> e613402148dee5a12a8f716e3238cd1526b0de0e
     // console.log(data);
     // key = data --> test by using the keyword data
   var allGroup = Object.keys(data[0]).slice(1) // function .slice gets rid of an element from a list
@@ -128,7 +140,11 @@ d3.csv("../../raw_data/keyword_search_volume_US.csv").then(function(data) {
   
   // Create a variable selectedOption to mark the y axis
   var selectedOption = d3.select("#selectButton").property("value")
+<<<<<<< HEAD
 ​
+=======
+
+>>>>>>> e613402148dee5a12a8f716e3238cd1526b0de0e
   // What happens when the mouse move -> show the annotations at the right positions.
   function mouseover() {
     focus.style("opacity", 10)
@@ -161,7 +177,11 @@ d3.csv("../../raw_data/keyword_search_volume_US.csv").then(function(data) {
   function update(selectedOption) {
     y.domain([0, d3.max(data, function(d) { return +d[selectedOption]; })])
     yaxis.call(d3.axisLeft(y));
+<<<<<<< HEAD
 ​
+=======
+
+>>>>>>> e613402148dee5a12a8f716e3238cd1526b0de0e
     // Give these new data to update line
     line
         .datum(data)
@@ -173,7 +193,11 @@ d3.csv("../../raw_data/keyword_search_volume_US.csv").then(function(data) {
         )
         .attr("stroke", function(d){ return myColor(selectedOption) })
   }
+<<<<<<< HEAD
 ​
+=======
+
+>>>>>>> e613402148dee5a12a8f716e3238cd1526b0de0e
   // When the button is changed, run the updateChart function
   d3.select("#selectButton").on("change", function(d) {
       // recover the option that has been chosen

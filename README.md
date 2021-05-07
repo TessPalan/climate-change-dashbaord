@@ -21,7 +21,7 @@ We also will be analyzing how searches and trends on Google related to environme
   - D3.json 
 3. Rendering
   - Flask
-  - SQL Light
+  - SQL Lite
 5. Front-end Development
   - HTML
   - CSS
@@ -34,6 +34,12 @@ We also will be analyzing how searches and trends on Google related to environme
 [Pytrends Library] (https://pypi.org/project/pytrends/)
 
 ## Sneak Peak of our Visualization
+### C02 Emissions as it Realtes to Total Population 
+![image](https://user-images.githubusercontent.com/75353991/117392111-40ce5400-aea6-11eb-8e04-49c7830ce430.png)
+
+Pytrend Keywords Search Volume from 2004 to 2016.
+
+Keywords: Clean Energy, Sustainability, Environment, Climate Change 
 ### Emissions by Income Level
 ![image](https://user-images.githubusercontent.com/75353991/117095612-a6daa000-ad1b-11eb-8dec-dfdef4b9176a.png)
 
@@ -44,7 +50,7 @@ The average total C02 emmissions by income level from 2006-2016.
 
 ## Comments and tips for future readers
 Carolina Ibarra
-> "Quote" 
+> "It is recommended that you use an empty HTML element when starting a chart." 
 
 Ellis Mok
 > "For D3 beginners, I suggest to play around with the test example given and then plug in your dataset to the d3 template. 
