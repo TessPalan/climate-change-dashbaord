@@ -16,19 +16,43 @@ Inspired by the Timeplase features and the Earth Day celebration, our team wante
 
 ## :package: Tools and Libraries the Project Uses
 1. Data Cleaning
-  - Python
+
+```
+- Python
+- Pandas
+- Pytrends
+```
+
 2. Data Visualizations
-  - Leaflet 
-  - Radial Barchart 
-  - D3.json 
-    - Multiple Line Graphs
-    - Mouseover
+
+```
+1. Leaflet
+    - Heatmap & Geomap
+    - Data Source Used: `<'country-capitals.csv' and output 'emission_population_location_copy.json'>` 
+    - Data Source Used: `<'geoJSON.json' with 'emission_population_location_copy.json' and output make data2.json>` 
+      - geoJSON.json: `<'https://datahub.io/core/geo-countries#resource-countries>` 
+ 2. Radial Barchart
+    - Data Source Used: `<CO2 Emission>`
+ 3. D3
+    - Multiple Line Graph & Mouseover 
+    - Data Source Used: `<Pytrends>`
+```
+ 
 3. Data Rendering
+
+```
   - Flask
+  - MongoDB
   - SQL Lite
+```
+
 5. Front-end Development
+
+```
   - HTML
   - CSS
+```
+
 6. Heroku
 
 
@@ -41,6 +65,22 @@ Inspired by the Timeplase features and the Earth Day celebration, our team wante
 
 ## :chart_with_upwards_trend: Sneak Peak of our Visualization
 ### C02 Emissions as it Realtes to Total Population 
+<details>
+<summary>1. Data Cleaning</summary>
+  content
+</details>
+
+```
+- Python
+- Pandas
+- Pytrends
+```
+<details>
+<summary>2. Data Visualizations</summary>
+
+ content
+ 
+</details>
 ![image]()
 
 The bubble changes according to the size of the population and the circle outliner 
