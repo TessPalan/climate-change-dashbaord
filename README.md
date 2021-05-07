@@ -92,12 +92,12 @@ The bubble changes according to the size of the population and the circle outlin
 
 ### Number 3: Pytrends Keywords Search Volume from 2004 to 2016
 <details>
-<summary>Click here to view our radial<img width="340" alt="Screen Shot 2021-05-06 at 11 00 33 PM" src="https://user-images.githubusercontent.com/74644774/117405347-594b6800-aec0-11eb-8355-9a5a7ba20b13.png">
- map</summary>
+<summary>Click here to view our multiple line graph</summary>
 
- ![image](https://user-images.githubusercontent.com/75353991/117392111-40ce5400-aea6-11eb-8e04-49c7830ce430.png)
+<img width="350" alt="Screen Shot 2021-05-06 at 11 01 40 PM" src="https://user-images.githubusercontent.com/74644774/117405500-9adc1300-aec0-11eb-9192-e9745f6ac23a.png">
  
 </details>
+
 
 ```
 Pytrend Keywords Search Volume from 2004 to 2016.
