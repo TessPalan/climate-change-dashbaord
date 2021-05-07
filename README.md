@@ -64,10 +64,12 @@ Inspired by the Timeplase features and the Earth Day celebration, our team wante
 [Pytrends Library] (https://pypi.org/project/pytrends/)
 
 ## :chart_with_upwards_trend: Sneak Peak of our Visualization
-### C02 Emissions as it Realtes to Total Population 
+### Number 1: C02 Emissions as it Realtes to Total Population 
 <details>
 <summary>Click here to view our heatmap</summary>
- ![image](![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif))
+    
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+ 
 </details>
 
 ```
@@ -75,7 +77,7 @@ Some description of how to view the map, what we see, and what to infer.
 The bubble changes according to the size of the population and the circle outliner 
 ```
 
-### Emissions by Income Level
+### Number 2: Emissions by Income Level
 <details>
 <summary>Click here to view our radial map</summary>
 
@@ -88,9 +90,10 @@ Some description of how to view the map, what we see, and what to infer.
 The bubble changes according to the size of the population and the circle outliner 
 ```
 
-### C02 Emissions as it Realtes to Total Population 
+### Number 3: Pytrends Keywords Search Volume from 2004 to 2016
 <details>
-<summary>Click here to view our radial map</summary>
+<summary>Click here to view our radial<img width="340" alt="Screen Shot 2021-05-06 at 11 00 33 PM" src="https://user-images.githubusercontent.com/74644774/117405347-594b6800-aec0-11eb-8355-9a5a7ba20b13.png">
+ map</summary>
 
  ![image](https://user-images.githubusercontent.com/75353991/117392111-40ce5400-aea6-11eb-8e04-49c7830ce430.png)
  
