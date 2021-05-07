@@ -1,5 +1,9 @@
 const el = document.getElementById('chart')
 
+d3.json("/keyword_search").then(function(data){
+  console.log(data)
+});
+
 const options = {
     chart: { title: 'Average Total CO2 Emmissions by Income Level', width: 1000, height: 500 },
     xAxis: { pointOnColumn: false, title: { text: 'Emmissions(metric tons)' } },

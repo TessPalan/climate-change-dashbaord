@@ -1,15 +1,9 @@
 from flask import Flask, jsonify, render_template, request, redirect
-# import sqlite3
-# import numpy as np
-# import sqlalchemy
-# from sqlalchemy.ext.automap import automap_base
-# from sqlalchemy.orm import Session
-# from sqlalchemy import create_engine, func
-# import csv
 import pymongo
 from flask_pymongo import PyMongo
 import pandas as pd
 import json
+# From initdb import create_collection
 
 #################################################
 # Flask Setup
@@ -25,9 +19,10 @@ conn = "mongodb://localhost:27017"
 client = pymongo.MongoClient(conn)
 
 # connect to mongo db and collection
-db = client.climate_change_db
-keywords = db.keywords
-co2_income = db.co2_income
+db = client.dashbaord_db
+# db = client.climate_change_db
+# keywords = db.keywords
+# co2_income = db.co2_income
 
 #################################################
 # Flask Routes
@@ -58,11 +53,23 @@ def discussion():
 def data():
     return render_template("data.html")
 
-#@app.route("/keyword_search")
+@app.route("/keyword_search")
+def keyword_search():
+    results = db.keywords.find_one({}) #query collection pymongo
+    
+    return jsonify(results['data'])
+
+# @app.route("/jeojsaon_map")
+# def jeojsaon_map():
+#     results = db.jeojson.find_one({}) #query collection pymongo
+    
+#     return jsonify(results['data'])
+
+#@app.route("/geojason")
 # def keyword_search():
-#     results = #query collection pymongo
-#     jsonified_resualts = #convert to json
-#     return(jsonified_resualts)
+#     results2 = #query collection pymongo
+#     jsonified_resualts2 = #convert to json
+#     return(jsonified_resualts2)
 
 if __name__ == "__main__":
     app.run(port=5001, debug=True)

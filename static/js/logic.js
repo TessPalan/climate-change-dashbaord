@@ -30,7 +30,11 @@ svg.append("text")
 // var key = 0; --> test by creating an empty dataset
 
 // Read in the data
+<<<<<<< HEAD
 d3.csv("../../raw_data/keyword_search_volume_US.csv").then(function(data) {
+=======
+d3.json("/keyword_search").then(function(data) {
+>>>>>>> ece500cb18580c21d0708eabac4d275e1ace28da
     // console.log(data);
     // key = data --> test by using the keyword data
   var allGroup = Object.keys(data[0]).slice(1) // function .slice gets rid of an element from a list
@@ -173,6 +177,18 @@ d3.csv("../../raw_data/keyword_search_volume_US.csv").then(function(data) {
         )
         .attr("stroke", function(d){ return myColor(selectedOption) })
   }
+<<<<<<< HEAD
+=======
+
+  // When the button is changed, run the updateChart function
+  d3.select("#selectButton").on("change", function(d) {
+      // recover the option that has been chosen
+      selectedOption = d3.select(this).property("value")
+      // run the updateChart function with this selectedOption
+      update(selectedOption)
+  })
+})
+>>>>>>> ece500cb18580c21d0708eabac4d275e1ace28da
 
   // When the button is changed, run the updateChart function
   d3.select("#selectButton").on("change", function(d) {
