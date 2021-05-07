@@ -27,7 +27,7 @@ function chooseColorIncome(income) {
 // var geojsonPath = d3.json('/jeojsaon_map');
 
 // reading in json data and passing into function
-d3.json('/jeojsaon_map').then(function(geojsonData){
+d3.json('/geojson_map', function(geojsonData){
 
     var geoData = geojsonData.features;
     // console.log(geoData);

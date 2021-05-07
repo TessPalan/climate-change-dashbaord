@@ -45,10 +45,6 @@ def visualizations():
     # print(count)
     return render_template("visualizations.html")
 
-@app.route("/discussion")
-def discussion():
-    return render_template("discussion.html")
-
 @app.route("/data")
 def data():
     return render_template("data.html")
@@ -59,11 +55,11 @@ def keyword_search():
     
     return jsonify(results['data'])
 
-# @app.route("/jeojsaon_map")
-# def jeojsaon_map():
-#     results = db.jeojson.find_one({}) #query collection pymongo
+@app.route("/geojson_map")
+def jeojsaon_map():
+    results = db.geojson.find_one({}) #query collection pymongo
     
-#     return jsonify(results['data'])
+    return jsonify(results['data'])
 
 #@app.route("/geojason")
 # def keyword_search():
