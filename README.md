@@ -1,15 +1,9 @@
-# :globe_with_meridians: Let us talk about the health of our Earth :globe_with_meridians:
+# Let us talk about the health of our Earth 
 
 ### - Brought to you by the Perky Penguins - 
 Carolina Ibarra, Ellis Mok, Grace Li, Seidy Pacheco, and Tess Palan
 
 ## Background
-Have you seen the Google Earth's new Timelapse feature?
-![link](https://www.ecowatch.com/google-earth-timelapse-climate-change-2652595487.html)
-
-
-Inspired by the Timeplase features and Earth Day celebration, our team wanted to focus on Earth theme!
-
 Our team aims to develop a dashboard that showcases changes in CO2 emissions by country relative to population changes from 2006-2016. 
 We also will be analyzing how searches and trends on Google related to environmental changes and sustainable goods change as CO2 emissions and population change by regions.
 
@@ -40,6 +34,11 @@ We also will be analyzing how searches and trends on Google related to environme
 [Pytrends Library] (https://pypi.org/project/pytrends/)
 
 ## Sneak Peak of our Visualization
+### C02 Emissions as it Realtes to Total Population 
+![image](https://user-images.githubusercontent.com/75353991/117392111-40ce5400-aea6-11eb-8e04-49c7830ce430.png)
+
+Pytrend Keywords Search Volume from 2004 to 2016.
+Keywords: Clean Energy, Sustainability, Environment, Climate Change 
 ### Emissions by Income Level
 ![image](https://user-images.githubusercontent.com/75353991/117095612-a6daa000-ad1b-11eb-8dec-dfdef4b9176a.png)
 
@@ -50,7 +49,7 @@ The average total C02 emmissions by income level from 2006-2016.
 
 ## Comments and tips for future readers
 Carolina Ibarra
-> "Quote" 
+> "It is recommended that you use an empty HTML element when starting a chart." 
 
 Ellis Mok
 > "For D3 beginners, I suggest to play around with the test example given and then plug in your dataset to the d3 template. 
