@@ -1,9 +1,15 @@
-# Let us talk about the health of our Earth 
+# :globe_with_meridians: Let us talk about the health of our Earth :globe_with_meridians:
 
 ### - Brought to you by the Perky Penguins - 
 Carolina Ibarra, Ellis Mok, Grace Li, Seidy Pacheco, and Tess Palan
 
 ## Background
+Have you seen the Google Earth's new Timelapse feature?
+![link](https://www.ecowatch.com/google-earth-timelapse-climate-change-2652595487.html)
+
+
+Inspired by the Timeplase features and Earth Day celebration, our team wanted to focus on Earth theme!
+
 Our team aims to develop a dashboard that showcases changes in CO2 emissions by country relative to population changes from 2006-2016. 
 We also will be analyzing how searches and trends on Google related to environmental changes and sustainable goods change as CO2 emissions and population change by regions.
 
