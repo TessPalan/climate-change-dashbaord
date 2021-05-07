@@ -21,7 +21,7 @@ We also will be analyzing how searches and trends on Google related to environme
   - D3.json 
 3. Rendering
   - Flask
-  - SQL Light
+  - SQL Lite
 5. Front-end Development
   - HTML
   - CSS
