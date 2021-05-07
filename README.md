@@ -1,31 +1,37 @@
-# Let us talk about the health of our Earth 
-
+# :globe_with_meridians: Let us talk about the health of our Earth :globe_with_meridians:
 
 ### - Brought to you by the Perky Penguins - 
 Carolina Ibarra, Ellis Mok, Grace Li, Seidy Pacheco, and Tess Palan
 
 ## Background
-Our team aims to develop a dashboard that showcases changes in CO2 emissions by country relative to population changes from 2006-2016. 
-We also will be analyzing how searches and trends on Google related to environmental changes and sustainable goods change as CO2 emissions and population change by regions.
+Have you seen the Google Earth's new Timelapse feature?
+
+[Click here to see Google Earth Timelapse Climate Change](https://www.ecowatch.com/google-earth-timelapse-climate-change-2652595487.html)
+
+Inspired by the Timeplase features and the Earth Day celebration, our team wanted to develop a dashboard that showcases changes in CO2 emissions by country relative to population changes from 2006-2016. We also thought it would be a cool idea to see if there were popular trends in environment-related keywords searches during 2006-2016. 
 
 ## Objectives
 1. Visualize how CO2 emission changes are related to population changes
-2. Learn how Google search trends for sustainable goods change alongside these two factors
+2. Visualize environment-related Google search trends using Pytrends
 
 ## Tools and Libraries the Project Uses
-1. Data Pulling and Cleaning
+1. Data Cleaning
+  - Pandas
   - Python
-   - Pandas
 2. Data Visualizations
   - Leaflet 
   - Radial Barchart 
   - D3.json 
-3. Rendering
+    - Multiple Line Graphs
+    - Mouseover
+3. Data Rendering
   - Flask
   - SQL Lite
 5. Front-end Development
   - HTML
   - CSS
+6. Heroku
+
 
 ## Sources and Datasets 
 [World Bank Population Totals] (https://data.worldbank.org/indicator/SP.POP.TOTL?view=chart)
