@@ -1,4 +1,4 @@
-# Let us talk about the health of our Earth ![image](https://user-images.githubusercontent.com/75353991/117394514-28146d00-aeab-11eb-92cc-262eb00c2bc6.png)
+# Let us talk about the health of our Earth 
 
 
 ### - Brought to you by the Perky Penguins - 
