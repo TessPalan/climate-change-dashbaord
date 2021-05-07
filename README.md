@@ -66,58 +66,38 @@ Inspired by the Timeplase features and the Earth Day celebration, our team wante
 ## :chart_with_upwards_trend: Sneak Peak of our Visualization
 ### C02 Emissions as it Realtes to Total Population 
 <details>
-<summary>1. Data Cleaning</summary>
-  content
+<summary>Click here to view our heatmap</summary>
+ ![image](https://user-images.githubusercontent.com/75353991/117095612-a6daa000-ad1b-11eb-8dec-dfdef4b9176a.png)
 </details>
 
 ```
-- Python
-- Pandas
-- Pytrends
+Some description of how to view the map, what we see, and what to infer. 
+The bubble changes according to the size of the population and the circle outliner 
 ```
+### Emissions by Income Level
 <details>
-<summary>2. Data Visualizations</summary>
+<summary>Click here to view our radial map</summary>
 
- content
+ ![image](https://user-images.githubusercontent.com/75353991/117095612-a6daa000-ad1b-11eb-8dec-dfdef4b9176a.png)
  
 </details>
-![image]()
-
-The bubble changes according to the size of the population and the circle outliner 
-
-
-### Emissions by Income Level
-![image](https://user-images.githubusercontent.com/75353991/117095612-a6daa000-ad1b-11eb-8dec-dfdef4b9176a.png)
-
-The average total C02 emmissions by income level from 2006-2016. 
 
 ### C02 Emissions as it Realtes to Total Population 
-![image](https://user-images.githubusercontent.com/75353991/117392111-40ce5400-aea6-11eb-8e04-49c7830ce430.png)
+<details>
+<summary>Click here to view our radial map</summary>
 
+ ![image](https://user-images.githubusercontent.com/75353991/117392111-40ce5400-aea6-11eb-8e04-49c7830ce430.png)
+ 
+</details>
+
+```
 Pytrend Keywords Search Volume from 2004 to 2016.
-
 Keywords: Clean Energy, Sustainability, Environment, Climate Change 
-
+```
 
 ## :gift: Final Analysis and Limiations
 In general, 2006 -> 2016 increase a little 
 
-## :feet: Next Steps
+## :star_struck: Next Steps
 To our fellow readers, 
 
-## :star_struck: Comments and tips for future readers
-Carolina Ibarra
-> "It is recommended that you use an empty HTML element when starting a chart." 
-
-Ellis Mok
-> "For D3 beginners, I suggest to play around with the test example given and then plug in your dataset to the d3 template. 
-> Also check which version you are using - syntax change accordingly."
-
-Grace Li
-> "Quote" 
-
-Seidy Pacheco
-> "Quote"
-
-Tess Palan
-> "Quote" 
