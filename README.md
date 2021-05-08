@@ -68,7 +68,8 @@ Inspired by the Timeplase features and the Earth Day celebration, our team wante
 <details>
 <summary>Click here to view our heatmap</summary>
     
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+![Screen Shot 2021-05-08 at 9 34 35 AM](https://user-images.githubusercontent.com/74644774/117547078-7d06cf00-afe2-11eb-95fb-bcc40690ab35.png)
+
  
 </details>
 
