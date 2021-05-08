@@ -96,7 +96,7 @@ Please note readers that these years were chosen based on beginning, middle, and
 <details>
 <summary>Click here to view our multiple line graph</summary>
 
-<img width="350" alt="Screen Shot 2021-05-06 at 11 01 40 PM" src="https://user-images.githubusercontent.com/74644774/117405500-9adc1300-aec0-11eb-9192-e9745f6ac23a.png">
+<img width="1077" alt="Screen Shot 2021-05-08 at 9 01 07 AM" src="https://user-images.githubusercontent.com/74644774/117545759-fd760180-afdb-11eb-8f40-531981052365.png">
  
 </details>
 
