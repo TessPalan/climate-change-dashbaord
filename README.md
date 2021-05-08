@@ -73,8 +73,8 @@ Inspired by the Timeplase features and the Earth Day celebration, our team wante
 </details>
 
 ```
-Some description of how to view the map, what we see, and what to infer. 
-The bubble changes according to the size of the population and the circle outliner 
+From the interactive visualization above, you could select different options to get a better view of which country has the most CO2 emission and total population. 
+Obviously, we could see that there are dark spots around countries that have large CO2 emission per capital. 
 ```
 
 ### Number 2: Emissions by Income Level
@@ -86,8 +86,10 @@ The bubble changes according to the size of the population and the circle outlin
 </details>
 
 ```
-Some description of how to view the map, what we see, and what to infer. 
-The bubble changes according to the size of the population and the circle outliner 
+As shown above, this map shows us the total CO2 Emissions by income level in 2006, 2011, 2016. 
+We could see that throughout the years there is only a little increase of CO2 emission.
+Suprisingly, the higher the income the more CO2 emission is created. 
+Please note readers that these years were chosen based on beginning, middle, and end of our 10 year data.
 ```
 
 ### Number 3: Pytrends Keywords Search Volume from 2004 to 2016
@@ -100,13 +102,28 @@ The bubble changes according to the size of the population and the circle outlin
 
 
 ```
-Pytrend Keywords Search Volume from 2004 to 2016.
-Keywords: Clean Energy, Sustainability, Environment, Climate Change 
+Environmental-Related Keywords: Clean Energy, Sustainability, Environment, Climate Change 
+Pytrend Keywords Search Volume from 2004 to 2017. 
+Please note readers that we were only able to retrieve the beginning of 2017 data. For better results, one could view or remove 2017 as an outliner.
+We could see for clean energy, sustainability, and climage change ther is a peak interest from 2008 - 2010. 
+Interestingly, we could see that environment searchs decrease gradually every year. 
 ```
 
 ## :gift: Final Analysis and Limiations
-In general, 2006 -> 2016 increase a little 
+Things we can conclude:
+1. Sorting the CO2 emission by country shows us that smaller populated countries with massive CO2 emission are oil producing countries.
+2. Higher the income, the more CO2 emission. 
+3. Sustainability and Climate Change keywords are recently more popular compare to the other two. 
+4. For the past 10 years, the amount of CO2 emission has been increasing despite awareness (keyword search trends).
+
+Limitations: 
+1. There is no vivid connection between Google keywords trends and CO2 emission.
+2. Dataset could be larger.
 
 ## :star_struck: Next Steps
-To our fellow readers, 
+To our fellow readers, here are some things you can try:
+- Change up the data! Put in data that best interest you
+- Add new environmental related keywords
+- Combine CO2 Emissions and Trending Keywords to see if there is any relation
+- Most importantly have fun!
 
