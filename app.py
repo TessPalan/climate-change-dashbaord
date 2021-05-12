@@ -15,14 +15,9 @@ app = Flask(__name__)
 # Database Setup
 #################################################
 # setup mongo connection
-conn = "mongodb://localhost:27017"
-client = pymongo.MongoClient(conn)
+mongo = pymongo.MongoClient("mongodb+srv://tesspalan:YSPTuqMosY6PxoXu@cluster0.dhjfw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 
-# connect to mongo db and collection
-db = client.dashbaord_db
-# db = client.climate_change_db
-# keywords = db.keywords
-# co2_income = db.co2_income
+db = mongo['climate-dashboard']
 
 #################################################
 # Flask Routes
